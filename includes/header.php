@@ -54,7 +54,7 @@ $is_dashboard_page = ($user !== null && in_array($current_page, $dashboard_pages
         <script src="assets/js/splash.js" defer></script>
     <?php endif; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/img/loogo - Edited.png">
+    <link rel="icon" type="image/png" href="images/nexus_logo.png">
 </head>
 
 <body>
@@ -64,17 +64,34 @@ $is_dashboard_page = ($user !== null && in_array($current_page, $dashboard_pages
          NEXUS FEST SPLASH SCREEN
          ═══════════════════════════════════════════ -->
         <div id="splash-screen">
+            <div class="splash-particles-container" id="splash-particles"></div>
             <div class="splash-content">
                 <div class="splash-logo-container">
+                    <div class="cyber-rings">
+                        <div class="ring outer-ring"></div>
+                        <div class="ring inner-ring"></div>
+                        <div class="ring dashed-ring"></div>
+                        <div class="ring core-ring"></div>
+                    </div>
                     <div class="splash-glow"></div>
-                    <img src="assets/img/loogo - Edited.png" alt="Nexus Fest Logo" class="splash-logo">
+                    <img src="images/nexus_logo.png" alt="Nexus Fest Logo" class="splash-logo">
                 </div>
                 <div class="splash-text">
-                    <h1 class="splash-title">NEXUS FEST</h1>
-                    <p class="splash-subtitle">BCA | BCOM | BA • IT FEST 2026</p>
+                    <h1 class="splash-title glitch" data-text="NEXUS FEST">NEXUS FEST</h1>
+                    <div class="cyber-divider"></div>
+                    <p class="splash-subtitle">
+                        <span class="typewriter">SYSTEM INITIALIZING...</span>
+                    </p>
                 </div>
-                <div class="loader-bar">
-                    <div class="loader-progress"></div>
+                <div class="cyber-loader">
+                    <div class="loader-track">
+                        <div class="loader-progress"></div>
+                        <div class="loader-glow"></div>
+                    </div>
+                    <div class="loader-text">
+                        <span>CONNECTING TO NEXUS...</span>
+                        <span id="loading-pct" class="neon-text-blue">0%</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,7 +135,7 @@ $is_dashboard_page = ($user !== null && in_array($current_page, $dashboard_pages
             <div style="display: flex; align-items: center; gap: 5px;">
                 <a href="index.php"
                     style="text-decoration: none; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: white; display: flex; align-items: center; gap: 10px; margin-left: 5px;">
-                    <img src="assets/img/loogo - Edited.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 8px;">
+                    <img src="images/nexus_logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 8px;">
                     <span style="letter-spacing: -0.5px;">NEXUS FEST</span>
                 </a>
             </div>
@@ -133,7 +150,7 @@ $is_dashboard_page = ($user !== null && in_array($current_page, $dashboard_pages
             <!-- Sidebar -->
             <aside class="sidebar">
                 <a href="index.php" class="sidebar-brand" style="text-decoration: none;">
-                    <img src="assets/img/loogo - Edited.png" alt="Logo" style="width: 44px; height: 44px; object-fit: contain; border-radius: 12px; margin-right: 12px;">
+                    <img src="images/nexus_logo.png" alt="Logo" style="width: 44px; height: 44px; object-fit: contain; border-radius: 12px; margin-right: 12px;">
                     <div class="brand-name" style="font-family: 'Space Grotesk', sans-serif;">
                         <h2 style="font-size: 1.1rem; font-weight: 700; letter-spacing: -0.5px; text-transform: none;">
                             NEXUS FEST</h2>
@@ -301,7 +318,10 @@ $is_dashboard_page = ($user !== null && in_array($current_page, $dashboard_pages
                     <div class="scanline"></div>
 
                     <nav>
-                        <a href="index.php" class="logo neon-text-blue">NEXUS FEST</a>
+                        <a href="index.php" class="logo neon-text-blue">
+                            <img src="images/nexus_logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 8px;">
+                            <span>NEXUS FEST</span>
+                        </a>
                         <button class="nav-hamburger"
                             onclick="document.querySelector('.nav-links').classList.toggle('open')">
                             <i class="fa-solid fa-bars"></i>

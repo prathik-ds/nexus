@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- Header -->
             <div style="text-align: center; margin-bottom: 36px;">
                 <div style="margin-bottom: 18px;">
-                    <img src="assets/img/loogo - Edited.png" alt="Logo" style="width: 72px; height: 72px; object-fit: contain;">
+                    <img src="images/nexus_logo.png" alt="Logo" style="width: 72px; height: 72px; object-fit: contain;">
                 </div>
                 <h2
                     style="font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">

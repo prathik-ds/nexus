@@ -176,7 +176,7 @@ $current_date = date("F j, Y");
             </div>
 
             <div class="parchment-content">
-                <img src="images/logo.png" class="parch-water" alt="Water">
+                <img src="images/nexus_logo.png" class="parch-water" alt="Water">
                 <div class="rank-h">CERTIFICATE OF <?= $certificate_type ?></div>
                 <h2 class="fest-t">NEXUS FEST</h2>
                 <p style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 800; letter-spacing: 5px; color: #444;">BESTOWED PROUDLY UPON</p>
@@ -192,7 +192,7 @@ $current_date = date("F j, Y");
                     <div class="sig-font">Dr. Vincent Alva</div>
                     <div class="footer-l">Principal</div>
                 </div>
-                <img src="images/logo.png" class="fest-s" alt="Seal">
+                <img src="images/nexus_logo.png" class="fest-s" alt="Seal">
                 <div class="footer-block">
                     <div class="date-f"><?= $current_date ?></div>
                     <div class="footer-l">Date of Issue</div>
