@@ -75,12 +75,30 @@
 | | Acknowledgements | 6 |
 | **SECTION II** | **FORMAL TECHNICAL SECTION** | |
 | **Chapter 1** | **Introduction** | 7 |
-| | 1.1 Overview of College Fest Systems | 7 |
-| | 1.2 Introduction to Nexus Fest | 8 |
-| | 1.3 System Overview & Architecture | 9 |
-| **Chapter 2** | **Importance & Scope of the Study** | 10 |
-| | 2.1 Problem Analysis in Shared Environments | 10 |
-| | 2.2 Scope of the Platform | 11 |
+| | 1.1 Introduction of the System | 7 |
+| | 1.1.1 Project Title | 7 |
+| | 1.1.2 Category | 7 |
+| | 1.1.3 Overview | 8 |
+| | 1.2 Objectives of the System | 8 |
+| | 1.3 Scope of the System | 9 |
+| | 1.4 Structure of the System | 9 |
+| | 1.5 System Architecture | 10 |
+| | 1.6 Software/Hardware required for the implementation | 10 |
+| **Chapter 2** | **Software Representation and Specification** | 10 |
+| | 2.1 Introduction | 10 |
+| | 2.2 Overall Description | 11 |
+| | 2.2.1 Product Perspective | 11 |
+| | 2.2.2 Product Functions | 11 |
+| | 2.2.3 User Characteristics | 12 |
+| | 2.2.4 General Constraints | 12 |
+| | 2.2.5 Assumptions | 13 |
+| | 2.3 Special Requirements | 13 |
+| | 2.4 Functional Requirements | 14 |
+| | 2.4.1 Module 1: Student Portal & Matchmaking | 14 |
+| | 2.4.2 Module 2: Coordinator & Administrative Controls | 15 |
+| | 2.5 Design Constraints | 16 |
+| | 2.6 System Attributes | 16 |
+| | 2.7 Other Requirements | 17 |
 | **Chapter 3** | **Objectives of the Study** | 12 |
 | **Chapter 4** | **Methodology of Study** | 13 |
 | | 4.1 System Development Lifecycle (SDLC) | 13 |
@@ -91,12 +109,27 @@
 | | 5.2 Entity-Relationship (ER) Diagram | 18 |
 | | 5.3 Data Flow Diagrams (DFD) | 19 |
 | | 5.4 Performance Metric Analysis | 21 |
-| **Chapter 6** | **Major Findings, Conclusions, and Suggestions** | 22 |
-| | 6.1 Summary of Major Findings | 22 |
-| | 6.2 Suggestions & Future Scope | 23 |
-| | 6.3 Conclusion | 24 |
-| **Chapter 7** | **Learning Outcome of the Project** | 25 |
-| **Chapter 8** | **References** | 26 |
+| **Chapter 6** | **Program Code Listing** | 22 |
+| | 6.1 Database Connection | 22 |
+| | 6.2 Authentication | 23 |
+| | 6.3 Data Store/Retrieval/Update | 24 |
+| | 6.4 Data Validation | 25 |
+| | 6.5 Named Procedures/Functions | 26 |
+| | 6.6 Passing of Parameters | 27 |
+| | 6.7 Internal Documentation | 28 |
+| **Chapter 7** | **User Interface** | 29 |
+| | 7.1 Login | 29 |
+| | 7.2 Home Page | 29 |
+| | 7.3 Validation | 30 |
+| | 7.4 View | 31 |
+| | 7.5 Menu | 31 |
+| | 7.6 Alerts | 32 |
+| **Chapter 8** | **Major Findings, Conclusions, and Suggestions** | 33 |
+| | 8.1 Summary of Major Findings | 33 |
+| | 8.2 Suggestions & Future Scope | 34 |
+| | 8.3 Conclusion | 35 |
+| **Chapter 9** | **Learning Outcome of the Project** | 36 |
+| **Chapter 10** | **References** | 37 |
 | **SECTION III** | **ADDITIONAL INFORMATION** | |
 | | A. Copy of Tools for Data Collection | 27 |
 | | B. Bibliography | 29 |
@@ -185,64 +218,155 @@ Finally, we express our gratitude to **Mangalore University** for incorporating 
 
 ## CHAPTER 1: INTRODUCTION
 
-### 1.1 Overview of College Fest Systems
-In collegiate environments, annual inter-departmental and inter-collegiate festivals (fests) represent a vital aspect of student development. These events foster competition, test technical and commercial skills, and require rigorous organizational management. Historically, managing fests involved manual sign-up sheets, physical verification tickets, and paper-based scoreboards. However, manual systems suffer from:
-- **Redundant Registrations:** Students joining multiple conflicting tracks.
-- **Queue Bottlenecks:** Physical ticketing queues delaying event starts.
-- **Coordination Lag:** Delayed score aggregation causing extended waiting times before the final valedictory ceremony.
+### 1.1 Introduction of the System
+The advancement of web technologies has revolutionized event coordination and administrative management in educational settings. Inter-departmental and inter-collegiate festivals are essential components of student development, demanding robust orchestration. "Nexus Fest" is a purpose-built event management ecosystem designed to streamline and secure this process.
 
-With the advent of web technologies, digital portals have been developed to automate registration, ticketing, and scoring. However, typical systems are built as generic web portals without consideration for high-load environments. During peak registration hours, these sites experience concurrent hits from hundreds of students, resulting in database lockouts, server bottlenecks, and service disruptions.
+#### 1.1.1 Project Title
+**NEXUS FEST: A HIGH-PERFORMANCE WEB PLATFORM FOR INTER-DEPARTMENTAL COLLEGE FEST MANAGEMENT**
 
-### 1.2 Introduction to Nexus Fest
-**Nexus Fest 2026** is a modern, high-performance web platform designed specifically to address the unique challenges of inter-departmental college fests. It is customized to accommodate a dual-track competition model:
-1. **IT Track (BCA):** Events such as "Code Rush" and "Fusion Hack" that evaluate logical reasoning, programming proficiency, and rapid building capabilities.
-2. **Commerce Track (BCom):** Events such as "Biz Quiz" and business marketing contests that test financial literacy, analytical ability, and strategic planning.
+#### 1.1.2 Category
+- **Category:** Web-Based Application
+- **Domain:** Event Management and Coordination Systems
+- **Architecture:** Client-Server Monolithic Architecture
 
-Nexus Fest 2026 features a premium, cyber-tech inspired dark-mode user interface designed to maximize engagement and present an aesthetic that matches modern design trends. It covers the entire event lifecycle: user authentication, unique ID allocation, dynamic team formation via invitation codes, secure event-specific QR code check-ins, real-time leaderboard compilation, announcement broadcasts, and automated digital certificate generation.
+#### 1.1.3 Overview
+Nexus Fest is a specialized fest coordination system designed specifically for managing inter-departmental college festivals integrating IT (BCA) and Commerce (BCom) competition tracks. Sporting a premium, cyber-tech inspired dark mode user interface, the system manages the entire event lifecycle—from user registration and unique ID allocation to team formation, invite code distribution, optical QR-code based attendance verification, leaderboard compilation, and digital certificate distribution.
 
-### 1.3 System Overview & Architecture
-The system operates on a client-server monolithic architecture. This architecture was selected to maintain maximum performance on standard hosting environments by avoiding the overhead of API gateways or distributed microservice communications.
+### 1.2 Objectives of the System
+The primary objectives of the Nexus Fest platform are:
+1. **Automated Registration & Alphanumeric ID Assignment:** Create an automated registration workflow that assigns a unique, alphanumeric participant ID (`NXS-XXXX`) to each registered student, serving as their persistent identifier across all events.
+2. **Optical QR-Based Gatekeeping:** Integrate a secure check-in system that generates event-specific tickets containing encoded user and event tokens (`EVENT_QR|user_id|event_id`) and decodes them via front-facing or rear-facing camera inputs using the `html5-qrcode` library, preventing unauthorized entry or code sharing.
+3. **Database Layer Performance Optimization:** Implement a custom PHP database Singleton class to ensure exactly one PDO connection is active per script execution, disable persistent database allocations, and register a connection cleanup shutdown handler to prevent database crashes under peak loads of 600+ concurrent students.
+4. **Track-Based Fest Administration Portal:** Design and implement distinct dashboards for Administrators (live registration metrics, track assignment, announcements) and Coordinators (touch-friendly check-ins, score entry, CSV rosters) alongside public leaderboards and automated certificate generation for students.
 
+### 1.3 Scope of the System
+The functional scope of Nexus Fest covers:
+- **Student Module:** Profile setup, automated unique ID assignment, event browsing filtered by IT and Commerce Tracks, dynamic team creation, invite code management, event-specific QR ticket generation, public leaderboard access, and dynamic certificate downloads.
+- **Coordinator Module:** Assigned events overview dashboard, optical camera-based QR check-in, inline attendance and status synchronization, score registry, and CSV roster exports.
+- **Admin Module:** Command dashboard with live metrics, user role management, track creation and coordinator assignment, and announcement/notice board broadcasts.
+- **Out of Scope boundaries:** The system does not support financial payment gateways or automated external email notifications, focusing instead on internal local network performance.
+
+### 1.4 Structure of the System
+The codebase is structured logically to separate frontend rendering, backend processing, configuration settings, and assets:
+- **`config/db.php`**: Database Singleton instance manager and backwards-compatibility shim.
+- **`includes/header.php` & `includes/footer.php`**: Reusable structural shells containing navigation logic and dynamic scripts.
+- **`index.php`**: Splash and entry screen featuring count-down clocks and core track announcements.
+- **`login.php` & `register.php`**: Secure sign-up, unique ID generation, and session initialization.
+- **`dashboard.php`**: Student portal showing user registration status, announcement cards, and QR codes.
+- **`events.php` & `register_event.php`**: Event discovery and slot-restricted registration.
+- **`leaderboard.php`**: Hall of Fame rankings and winner designations.
+- **`coordinator.php` & `coordinator_actions.php`**: Optical check-in scanners and score sheets.
+- **`admin.php` & `admin_events.php`**: Global metrics, coordinator assigner, and announcers.
+
+### 1.5 System Architecture
+The system operates on a client-server monolithic architecture. This architecture was selected to maintain maximum performance on standard shared hosting environments by avoiding the overhead of API gateways or distributed microservice communications.
+
+```mermaid
+graph TD
+    Client[Client Interface: HTML5, CSS3, Vanilla JS, html5-qrcode.js]
+    Backend[Backend Layer: PHP 8.x Engine & Session Handler]
+    DB[(Database Layer: MySQL Schema)]
+    
+    Client -->|HTTP POST/GET Requests / AJAX| Backend
+    Backend -->|PDO Database Singleton Instance| DB
+    DB -->|Relational Data Arrays| Backend
+    Backend -->|HTML/JSON Views| Client
 ```
-       +─────────────────────────────────────────────────────────+
-       |                       CLIENT LAYER                      |
-       |  (Responsive HTML5, CSS3, Vanilla JS, html5-qrcode.js)  |
-       +────────────────────────────┬────────────────────────────+
-                                    │
-                                    │ HTTP / AJAX
-                                    ▼
-       +─────────────────────────────────────────────────────────+
-       |                      BACKEND LAYER                      |
-       |        (PHP 8.x - Authentication & Session Engine)      |
-       +────────────────────────────┬────────────────────────────+
-                                    │
-                                    │ PDO Singleton Instance
-                                    ▼
-       +─────────────────────────────────────────────────────────+
-       |                     DATABASE LAYER                      |
-       |                     (MySQL Schema)                      |
-       +─────────────────────────────────────────────────────────+
-```
 
-The frontend uses vanilla technologies to guarantee compatibility across mobile and desktop browsers without rendering delays. The backend, written in PHP 8.x, manages authorization and security. The database layer uses MySQL, optimized to ensure relational integrity while executing queries with low response times.
+The client-side scripts decode optical inputs and forward lightweight JSON AJAX postbacks to the backend. The backend manages authorization state via standard PHP session wrappers. All database queries utilize the Single-PDO helper class to restrict active database connections to one per request thread.
+
+### 1.6 Software/Hardware required for the implementation
+
+#### Hardware Requirements
+- **Development & Client Host:**
+  - **Processor:** Intel Core i3 or equivalent (Dual-core 2.0 GHz or higher).
+  - **RAM:** Minimum 4 GB (8 GB Recommended for local testing).
+  - **Storage:** Minimum 100 MB of free storage space for hosting files.
+  - **Network:** Active network connection (stable mobile network for on-field QR check-ins).
+
+#### Software Requirements
+- **Server Environment:**
+  - **Operating System:** Windows 10/11, Linux (Ubuntu/Debian), or macOS.
+  - **Web Server:** Apache (with `.htaccess` rewrite rules), Nginx, or PHP Built-in Server.
+  - **Backend Language:** PHP 8.0 or higher.
+  - **Database:** MySQL 5.7+ or MariaDB 10.3+.
+- **Client/Frontend Environment:**
+  - **Web Browser:** Modern HTML5-compliant web browser (Google Chrome, Mozilla Firefox, Safari, Microsoft Edge).
+  - **Libraries:** html5-qrcode library, and qrcodejs.
 
 ---
 
-## CHAPTER 2: IMPORTANCE & SCOPE OF THE STUDY
+## CHAPTER 2: SOFTWARE REPRESENTATION AND SPECIFICATION
 
-### 2.1 Problem Analysis in Shared Environments
-Shared hosting servers (such as Hostinger Premium) are the standard deployment choice for college portals due to budget limits. However, these environments enforce strict limits on concurrent MySQL connections (typically between 25 and 75 maximum simultaneous connections). 
+### 2.1 Introduction
+The purpose of this Software Representation and Specification (SRS) is to establish a comprehensive technical and functional blueprint for Nexus Fest 2026. It specifies the requirements, performance guidelines, structural design constraints, and administrative workflows. This document is intended for project guides, developers, and system administrators.
 
-During an active college fest, a student body of over 600 users will attempt to register or view results concurrently. A standard PHP database connection open model—where each page execution creates a new connection that is held open until garbage collection—quickly exhausts the database connection pool. This leads to connection refusals and the "Too many connections" failure state.
+### 2.2 Overall Description
 
-Additionally, typical QR code implementations use static, global user passes. These passes contain only the user ID, allowing students to check in to incorrect events or share codes with peers to forge attendance. Track coordinators, operating on mobile connections under bright sunlight, require interfaces that are touch-optimized, lightweight, and capable of instantaneous state changes without waiting for full page reloads.
+#### 2.2.1 Product Perspective
+Nexus Fest 2026 is an independent, self-contained monolithic web application. It operates on a client-server architecture, connecting a responsive, client-side web browser directly to an Apache/Nginx web server hosting a PHP backend and a MySQL database. It does not rely on external web services or microservice APIs, ensuring that it remains lightweight and portable for local hostings or shared hosting environments.
 
-### 2.2 Scope of the Platform
-Nexus Fest 2026 is designed to address these concerns directly through targeted software optimizations:
-- **Connection Optimization:** Implementation of a database connection wrapper utilizing the Singleton Pattern. This pattern guarantees that only one PDO connection is opened per page execution, and it explicitly closes connections via a PHP shutdown hook.
-- **Cryptographic Gatekeeping:** Replacing global QR passes with event-specific QR tickets containing encoded user and event tokens (`EVENT_QR|user_id|event_id`).
-- **Touch-First Coordinator Dashboard:** Replacing desktop-focused table layouts with responsive card layouts and inline synchronizations.
-- **Academic Lifecycle Coverage:** End-to-end integration of student sign-ups, event matchmaking, coordinator verification, admin control, leaderboard analytics, and certificate issue boards.
+#### 2.2.2 Product Functions
+- Student authentication and unique ID (`NXS-XXXX`) assignment.
+- Event registry and track-based exploration (IT track vs. Commerce track).
+- Dynamic slot calculation and eligibility validation.
+- Dynamic team matchmaking via leader-generated invite codes.
+- Event-specific QR ticket generation and optical verification check-ins.
+- Session-cached notice boards and global alert broadcasts.
+- Roster export (CSV) and dynamic certificate generator.
+- Real-time leaderboard score aggregate tracker.
+
+#### 2.2.3 User Characteristics
+- **Students/Participants:** Require simple, responsive dashboards to sign up for events, join teams, and display QR codes on their mobile screens.
+- **Coordinators:** Require touch-optimized layouts with inline select actions to verify check-ins and register scores on-site.
+- **Administrators:** Require global control dashboards to seed events, assign roles, manage participants, and broadcast notices.
+
+#### 2.2.4 General Constraints
+- Shared hosting MySQL thread constraints (Hostinger Premium limits).
+- Browser-dependent camera access permissions for QR scanning.
+- Network dependency (no offline operations in the current version).
+
+#### 2.2.5 Assumptions
+- Users access the application via modern, HTML5-compliant mobile or desktop web browsers.
+- The server maintains a stable PHP 8.x installation and a MySQL/MariaDB database instance.
+
+### 2.3 Special Requirements (Software / Hardware - if any)
+- **Optical Input Device:** The coordinator's client device must have a functioning front-facing or rear-facing camera to capture and decode QR check-in tickets.
+- **Secure Layer (HTTPS):** Production deployments require SSL/TLS certificates to satisfy browser constraints for camera stream capture (`getUserMedia`).
+- **Singleton Database Handler:** Requires PHP PDO module enabled with PDO-MySQL database drivers.
+
+### 2.4 Functional Requirements
+
+#### 2.4.1 Module 1: Student Portal & Matchmaking Module
+- Enforces secure registration and hash validation (`password_hash` with `PASSWORD_DEFAULT`).
+- Generates and locks participant unique ID codes.
+- Enables slot availability check prior to event join execution.
+- Implements team generation: Leader generates invitation code; members register by inputting the code, mapping user associations under `team_members` and validating size constraints.
+- Dynamically generates QR ticket containing token string `EVENT_QR|user_id|event_id`.
+
+#### 2.4.2 Module 2: Coordinator & Administrative Controls Module
+- Captures camera frames and decodes token string.
+- Executes asynchronous AJAX post request to check attendance.
+- Validates target event matches coordinator's assigned duties.
+- Updates registration database state to 'present'.
+- Provides administrative inputs to register scoring metrics (Winner, Runner, Participated) and triggers CSV exports.
+- Displays centralized admin commands for seeding data, changing roles, and posting notices.
+
+### 2.5 Design Constraints
+- **No Heavy CSS Frameworks:** Vanilla CSS styled manually to prevent render blocking on slower mobile networks.
+- **Database Normalization:** Strict compliance with Third Normal Form (3NF) relational database standards.
+- **CSRF Token Guards:** Cryptographically secure CSRF verification tokens on state-changing POST requests.
+- **Session Announcement Cache:** Caches notices for 2 minutes to prevent repetitive database read exhaustion.
+
+### 2.6 System Attributes
+- **Security:** Bcrypt password hashing, session validation with HttpOnly and SameSite attributes, CSRF filters, and parameterized SQL queries to prevent SQL injections.
+- **Reliability:** Graceful error handling (503 Service Unavailable pages on database connection dropouts) and short timeouts.
+- **Performance:** Sub-1.5 second page load responses, lightweight data payloads.
+- **Usability:** High-contrast neon dark mode layout tailored for readability under outdoor conditions.
+
+### 2.7 Other Requirements
+- **Database Migration/Installation Script (`install.php`):** An automated installer script that validates environment configurations, deploys required schema tables, seeds basic data (Super Admin account, sample event categories), and provides validation messages.
+- **Backup & Portability Support:** Database exports (`.sql` files) and environment-neutral database connection configurations.
 
 ---
 
@@ -552,27 +676,233 @@ This optimization reduces bandwidth consumption on mobile networks by 98.6%, ens
 
 ---
 
-## CHAPTER 6: MAJOR FINDINGS, CONCLUSIONS, AND SUGGESTIONS
+## CHAPTER 6: PROGRAM CODE LISTING
 
-### 6.1 Summary of Major Findings
+### 6.1 Database Connection
+The database connection module establishes communication between PHP and MySQL. It utilizes the Singleton design pattern to restrict active database connections to exactly one active PDO instance per script execution context.
+
+```php
+class Database
+{
+    private static string $host    = '127.0.0.1';
+    private static string $dbName  = 'nexusfest';
+    private static string $user    = 'root';
+    private static string $pass    = '';
+    private static string $charset = 'utf8mb4';
+    private static ?PDO $instance = null;
+
+    private function __construct() {}
+
+    public static function getInstance(): PDO
+    {
+        if (self::$instance === null) {
+            $dsn = sprintf('mysql:host=%s;dbname=%s;charset=%s', self::$host, self::$dbName, self::$charset);
+            $options = [
+                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES   => false,
+                PDO::ATTR_PERSISTENT         => false,
+                PDO::ATTR_TIMEOUT            => 10,
+            ];
+            try {
+                self::$instance = new PDO($dsn, self::$user, self::$pass, $options);
+                register_shutdown_function(function () {
+                    Database::closeConnection();
+                });
+            } catch (PDOException $e) {
+                error_log('[Nexus Fest DB] Connection failed: ' . $e->getMessage());
+                http_response_code(503);
+                exit('Database connection failed.');
+            }
+        }
+        return self::$instance;
+    }
+
+    public static function closeConnection(): void
+    {
+        self::$instance = null;
+    }
+}
+$pdo = Database::getInstance();
+```
+
+### 6.2 Authentication
+Authentication validates user credentials and manages user-specific sessions across page requests. Password checking utilizes the `password_verify()` function against standard Bcrypt hashes.
+
+```php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user'] = $user;
+        header('Location: dashboard.php');
+    } else {
+        $error = "Invalid Email or Password.";
+    }
+}
+```
+
+### 6.3 Data Store/Retrieval/Update
+CRUD operations are used to insert, retrieve, update, and delete records from the database. The system utilizes PDO transaction blocks to guarantee data integrity during slot registration.
+
+```php
+// Check if event exists and check eligibility (Data Retrieval)
+$stmt = $pdo->prepare("SELECT eligibility_stream, current_participants, max_participants FROM events WHERE id = ?");
+$stmt->execute([$event_id]);
+$event = $stmt->fetch();
+
+// Process registration (Data Store and Data Update within Transaction)
+try {
+    $pdo->beginTransaction();
+
+    $stmt = $pdo->prepare("INSERT INTO registrations (user_id, event_id) VALUES (?, ?)");
+    $stmt->execute([$user_id, $event_id]);
+
+    $stmt = $pdo->prepare("UPDATE events SET current_participants = current_participants + 1 WHERE id = ?");
+    $stmt->execute([$event_id]);
+
+    $pdo->commit();
+    header('Location: events.php?success=1');
+} catch (PDOException $e) {
+    $pdo->rollBack();
+    header('Location: events.php?error=' . urlencode($e->getMessage()));
+}
+```
+
+### 6.4 Data Validation
+Validation prevents invalid data entry, checks stream eligibility constraints, and improves system security. 
+
+```php
+// Sanitize input
+$user_id = $_SESSION['user']['user_id'];
+$event_id = $_POST['event_id'] ?? '';
+
+if (empty($event_id)) {
+    header('Location: events.php?error=Missing+Event+ID');
+    exit;
+}
+
+// Eligibility check based on Student Course vs Event Eligibility Stream
+$userCourse = $_SESSION['user']['course']; // BCA, BCOM, or BA
+$requiredStream = $event['eligibility_stream']; // IT, Commerce, Art, or ALL
+
+if ($requiredStream !== 'ALL') {
+    $qualified = false;
+    if ($requiredStream === 'IT' && $userCourse === 'BCA') $qualified = true;
+    if ($requiredStream === 'Commerce' && $userCourse === 'BCOM') $qualified = true;
+    if ($requiredStream === 'Art' && $userCourse === 'BA') $qualified = true;
+
+    if (!$qualified) {
+        $msg = "Registration Error: This event is restricted to $requiredStream students only.";
+        header('Location: events.php?error=' . urlencode($msg));
+        exit;
+    }
+}
+```
+
+### 6.5 Named Procedures/Functions
+The application implements explicit named procedures and user-defined functions to keep code modular and readable.
+
+#### 1. Page Active State Check (`isActive`)
+```php
+function isActive($page)
+{
+    return basename($_SERVER['PHP_SELF']) == $page ? 'active' : '';
+}
+```
+
+#### 2. Unique Alphanumeric Team Code Generator (`generateTeamCode`)
+```php
+function generateTeamCode() {
+    return strtoupper(substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0, 6));
+}
+```
+
+#### 3. Database Singleton Retrieval (`Database::getInstance`)
+```php
+public static function getInstance(): PDO
+```
+
+### 6.6 Passing of Parameters
+Parameters are passed between frontend forms and backend scripts using standard HTTP requests.
+- **GET Request Parameters:** Used for non-destructive actions, such as fetching events, filters, and rendering user views:
+  `header('Location: events.php?error=' . urlencode($msg));`
+- **POST Request Parameters:** Used for secure data writes (like login authentication and team registrations):
+  `$event_id = (int)($_POST['event_id'] ?? 0);`
+- **AJAX JSON Parameters:** Used for touch check-in scanning and real-time team coordination without full-page reloads.
+
+### 6.7 Internal Documentation
+The system adheres to clean coding practices with comments and internal documentation formatting:
+- **Block Docstrings:** Used at the beginning of files and functions to describe parameters, singletons, and caching strategies.
+- **Inline Comments:** Explains key logic, error handlers, and transaction blocks.
+
+```php
+/**
+ * Nexus Fest Database Connection — Singleton Pattern
+ * Enforces one PDO connection to save connection pool count.
+ */
+```
+
+---
+
+## CHAPTER 7: USER INTERFACE
+
+### 7.1 Login
+The login page allows users to securely access the system. It enforces authorization controls by validating input credentials against registered user records.
+
+![Login Page User Interface](/C:/Users/Prath/.gemini/antigravity-ide/brain/04752e89-4a64-4d53-b78e-19d1b8ba590a/login_screenshot_1779898714329.png)
+
+### 7.2 Home Page
+The home page displays general event information, tracks, notice bulletins, countdown configurations, and navigational pathways. It is optimized for high readability on both mobile and desktop screens.
+
+![Home Page User Interface](/C:/Users/Prath/.gemini/antigravity-ide/brain/04752e89-4a64-4d53-b78e-19d1b8ba590a/home_screenshot_1779898733957.png)
+
+### 7.3 Validation
+Validation messages are dynamically generated and displayed for incorrect or incomplete input fields, including credential errors, duplicate event registration warnings, and team capacity constraints.
+
+### 7.4 View
+The dashboard interface allows users to view:
+- **Events:** Access details on eligibility, schedule, slots, and venue locations.
+- **Leaderboards:** Real-time event standings and cumulative points tracking.
+- **Notifications:** Important announcements, notices, and coordinator broadcasts.
+- **Certificates:** Dynamically generated PDF certificates of participation and achievement.
+
+### 7.5 Menu
+The glassmorphic navigation menu provides quick access to all modules based on user roles (Student, Coordinator, Administrator).
+
+### 7.6 Alerts
+Alerts and notifications are displayed instantly to keep students updated on schedule shifts, coordinator assignments, and leaderboard updates.
+
+![Alerts and Validation UI Mockups](/C:/Users/Prath/.gemini/antigravity-ide/brain/04752e89-4a64-4d53-b78e-19d1b8ba590a/alerts_screenshot_1779898754289.png)
+
+---
+
+## CHAPTER 8: MAJOR FINDINGS, CONCLUSIONS, AND SUGGESTIONS
+
+### 8.1 Summary of Major Findings
 The development, deployment, and testing of the Nexus Fest 2026 platform resulted in the following findings:
 1. **Singleton PDO Configuration prevents Connection Crashes:** Restricting database instantiation to a single PDO object per page request and freeing it via PHP's shutdown handler resolved connection timeouts, keeping the system online under concurrent registration traffic.
 2. **Event-Specific QR Structures secure Check-ins:** Utilizing a custom string containing the `user_id` and the `event_id` prevented participants from entering unassigned venues or using other students' passes.
 3. **JSON AJAX Requests improve Coordinator Efficiency:** Transitioning from full-page reloads to AJAX check-ins reduced data transfer payloads and allowed coordinators to verify attendance without workflow interruptions.
 4. **Responsive Layouts improve Usability:** Replacing standard tables with mobile-friendly card layouts optimized dashboard interfaces for use on mobile browsers.
 
-### 6.2 Suggestions & Future Scope
+### 8.2 Suggestions & Future Scope
 While the current version of Nexus Fest provides stable performance, the following additions are recommended for future iterations:
 - **Service Worker Integration for Offline Operations:** Cache coordinator scan requests locally if internet connectivity is lost, syncing them with the central database when a connection is re-established.
 - **Web Push Notifications:** Integrate push notification libraries to inform participants about schedule changes, venue updates, and leaderboard rankings.
 - **Automated Email Integration:** Use transaction queues to send confirmation emails and registration receipts without delaying page load speeds.
 
-### 6.3 Conclusion
+### 8.3 Conclusion
 The Nexus Fest 2026 project demonstrates the value of performance engineering in web application development. By analyzing the resource limits of shared hosting environments and implementing optimized database access patterns, the platform handles concurrent traffic without service disruptions. This system bridges the gap between academic theory and practical implementation, delivering an efficient, secure, and user-friendly experience for administrators, coordinators, and students.
 
 ---
 
-## CHAPTER 7: LEARNING OUTCOME OF THE PROJECT
+## CHAPTER 9: LEARNING OUTCOME OF THE PROJECT
 
 The execution of this project provided the development team with practical learning opportunities across several areas:
 
@@ -584,7 +914,7 @@ The execution of this project provided the development team with practical learn
 
 ---
 
-## CHAPTER 8: REFERENCES
+## CHAPTER 10: REFERENCES
 
 - **Academic Literature:**
   - Elmasri, R., & Navathe, S. B. (2015). *Fundamentals of Database Systems* (7th ed.). Pearson.
@@ -606,8 +936,8 @@ The following code snippets illustrate the system's database schema creation com
 
 ### 1. Database Table Creation Script (`server/schema.sql`)
 ```sql
-CREATE DATABASE IF NOT EXISTS `fusionverse_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `fusionverse_db`;
+CREATE DATABASE IF NOT EXISTS `nexusfest` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `nexusfest`;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -665,7 +995,7 @@ CREATE TABLE IF NOT EXISTS registrations (
 class Database
 {
     private static string $host    = '127.0.0.1';
-    private static string $dbName  = 'fusionverse_db';
+    private static string $dbName  = 'nexusfest';
     private static string $user    = 'root';
     private static string $pass    = '';
     private static string $charset = 'utf8mb4';

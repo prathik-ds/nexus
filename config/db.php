@@ -24,7 +24,7 @@ class Database
     // On Hostinger, the host is usually '127.0.0.1' or a dedicated DB host.
     // Update these values to match your Hostinger hPanel → Databases → MySQL.
     private static string $host    = '127.0.0.1';
-    private static string $dbName  = 'fusionverse_db';  // your DB name on Hostinger
+    private static string $dbName  = 'nexusfest';  // your DB name on Hostinger
     private static string $user    = 'root';             // your DB username on Hostinger
     private static string $pass    = '';                 // your DB password on Hostinger
     private static string $charset = 'utf8mb4';

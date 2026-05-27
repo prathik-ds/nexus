@@ -1,8 +1,8 @@
--- FusionVerse Database Full Structure — PORTABLE EDITION
+-- NexusFest Database Full Structure — PORTABLE EDITION
 -- Use this file to import the database into your server.
 
-CREATE DATABASE IF NOT EXISTS `fusionverse_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `fusionverse_db`;
+CREATE DATABASE IF NOT EXISTS `nexusfest` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `nexusfest`;
 
 -- 1. Table structure for table `users`
 CREATE TABLE IF NOT EXISTS `users` (
@@ -104,11 +104,10 @@ CREATE TABLE IF NOT EXISTS `announcements` (
 
 -- 7. Seed Data: Default Admin User (Password: admin123)
 INSERT IGNORE INTO `users` (`user_id`, `name`, `email`, `phone`, `course`, `password`, `role`) VALUES
-('ADMIN001', 'Super Admin', 'admin@fusionverse.com', '1234567890', 'Management', '$2y$10$eEHOyBwVqB2L4H7sWXX4yOWmDIfT3uFjE6E3qf4P2H4H1R3gT2fG6', 'admin');
+('ADMIN001', 'Super Admin', 'admin@nexusfest.com', '1234567890', 'Management', '$2y$10$eEHOyBwVqB2L4H7sWXX4yOWmDIfT3uFjE6E3qf4P2H4H1R3gT2fG6', 'admin');
 
 -- 8. Seed Data: Default Events
 INSERT IGNORE INTO `events` (`id`, `name`, `category`, `eligibility_stream`, `description`, `rules`, `date`, `time`, `venue`, `max_participants`, `is_team_event`, `min_team_size`, `max_team_size`) VALUES
 (1, 'Code Rush', 'IT Track', 'IT', 'Fast-paced coding competition where logic meets speed.', 'Individual. No internet allowed.', '2026-04-10', '10:00:00', 'Lab 1', 50, 0, 1, 1),
 (2, 'Biz Quiz', 'Commerce Track', 'Commerce', 'Test your business knowledge and strategy across rounds.', 'Team of 2. Buzzer format.', '2026-04-10', '11:30:00', 'Main Auditorium', 100, 1, 2, 2),
 (3, 'Fusion Hack', 'IT Track', 'ALL', 'Build the future in this intensive 12-hour build-a-thon.', 'Team of 3-4. Innovative solutions only.', '2026-04-11', '09:00:00', 'Arena North', 30, 1, 3, 4);
-

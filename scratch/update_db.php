@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db   = 'fusionverse_db';
+$db   = 'nexusfest';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);

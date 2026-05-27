@@ -5,7 +5,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = ''; // Default XAMPP/Wamp password
-$db   = 'fusionverse_db';
+$db   = 'nexusfest';
 
 echo "<body style='background: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 40px;'>";
 echo "<div style='max-width: 800px; margin: 0 auto; background: rgba(30, 41, 59, 0.5); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);'>";

@@ -5,7 +5,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db   = 'fusionverse_db';
+$db   = 'nexusfest';
 
 echo "<h2 style='font-family: sans-serif;'>NEXUS TEAM MIGRATION</h2>";
 

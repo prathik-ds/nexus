@@ -16,9 +16,9 @@ METHOD 1: ONE-CLICK AUTOMATED SETUP (Recommended)
 METHOD 2: MANUAL SQL IMPORT
 ---------------------------
 1. Open phpMyAdmin on the new PC.
-2. Create a new database named: fusionverse_db
+2. Create a new database named: nexusfest
 3. Select the database and click 'Import'.
-4. Choose the 'fusionverse_database.sql' file from this folder.
+4. Choose the 'nexusfest.sql' file from this folder.
 5. Click 'Go'.
 
 DEFAULT LOGIN CREDENTIALS:
