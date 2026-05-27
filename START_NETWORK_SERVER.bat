@@ -1,7 +1,7 @@
 
 @echo off
 echo ====================================================
-echo   FUSIONVERSE LOCAL NETWORK HOSTING
+echo   NEXUS FEST LOCAL NETWORK HOSTING
 echo ====================================================
 echo.
 echo Your WiFi IP is: 192.168.0.108
